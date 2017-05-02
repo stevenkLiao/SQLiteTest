@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private MyDBHelper helper;
     private EditText edName;
     private EditText edNumbewr;
-    private Button SqlBtn;
+    private Button AddBtn;
+    private Button DisBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +22,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         edName = (EditText) findViewById(R.id.editText1);
         edNumbewr = (EditText) findViewById(R.id.editText2);
-        helper = new MyDBHelper(this, "expense.db", null, 1);
-        SqlBtn = (Button) findViewById(R.id.button);
-        MyDBHelper helper = MyDBHelper.getInstance(this);
-
-        SqlBtn.setOnClickListener(new View.OnClickListener() {
+        AddBtn = (Button) findViewById(R.id.button);
+        DisBtn = (Button) findViewById(R.id.button2);
+        helper = MyDBHelper.getInstance(this);
+        Log.d("Create db", "Success");
+        AddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 add();
-                Log.d("Create db", "Success");
+                Log.d("Add1", "Success");
 
             }
         });
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         String cName = edName.getText().toString();
         String cNumber = edNumbewr.getText().toString();
         ContentValues values = new ContentValues();
-        values.put("_id", 22);
-        values.put("cdate", 1234);
+        values.put("cName", cName);
+        values.put("cNumber", cNumber);
         long id = helper.getWritableDatabase().insert("exp",null,values);
         Log.d("ADD:", id+"");
     }

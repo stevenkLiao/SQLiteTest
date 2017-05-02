@@ -2,5 +2,6 @@
     <string name="app_name">SQLiteTest</string>
     <string name="Main_Name">Name</string>
     <string name="phonenumber">PhoneNumber</string>
-    <string name="sql">Sqlite</string>
+    <string name="sql">Add</string>
+    <string name="display">Display</string>
 </resources>
