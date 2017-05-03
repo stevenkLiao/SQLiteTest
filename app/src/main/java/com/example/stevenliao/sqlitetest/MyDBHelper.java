@@ -14,7 +14,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     public static MyDBHelper getInstance(Context ctx) {
         if (instance == null) {
-            instance = new MyDBHelper(ctx, "PhoneNumber.db", null, 1);
+            instance = new MyDBHelper(ctx, "Data.db", null, 1);
         }
         return instance;
     }
@@ -26,8 +26,8 @@ public class MyDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE  TABLE main.exp " +
-                "(cName TEXT PRIMARY KEY  NOT NULL, " +
-                "cNumber INTEGER)");
+                "(Name TEXT PRIMARY KEY  NOT NULL , " +
+                "Number INTEGER NOT NULL)");
     }
 
     @Override

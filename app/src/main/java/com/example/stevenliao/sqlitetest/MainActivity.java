@@ -40,10 +40,9 @@ public class MainActivity extends AppCompatActivity {
         String cName = edName.getText().toString();
         String cNumber = edNumbewr.getText().toString();
         ContentValues values = new ContentValues();
-        values.put("cName", cName);
-        values.put("cNumber", cNumber);
-        long id = helper.getWritableDatabase().insert("exp",null,values);
-        Log.d("ADD:", id+"");
+        values.put("Name", cName);
+        values.put("Number", cNumber);
+        helper.getWritableDatabase().insert("exp", null, values);
     }
 
 }
